@@ -46,7 +46,7 @@ Example output:
 ![nvtop output](./img/image01.png)
 
 
-5. Open up a third terminal to test the running inferece server with`curl` 
+5. Open up a third terminal to test the running infernece server with`curl` 
 
 ```bash
 curl -X POST http://localhost:8000/v1/chat/completions   -H "Content-Type: application/json"   -d '{
