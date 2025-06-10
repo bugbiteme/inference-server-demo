@@ -10,6 +10,8 @@
 
 ## Procedures
 
+TODO: Hugging Face Token
+
 1. From the RHEL AI terminal, use podman to log into the registry `registry.redhat.io` with Red Hat account credentials to gain access to the Inference Engine
 
 ```bash
@@ -25,10 +27,18 @@ podman pull registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0.0
 3. Use Podman to run the inference server with the above specified model
 
 ```bash
-podman run --rm -it   --device nvidia.com/gpu=all   --security-opt=label=disable   --shm-size=4GB   -p 8000:8000   --env "HUGGING_FACE_HUB_TOKEN=$HF_TOKEN"   --env "HF_HUB_OFFLINE=0"   --env VLLM_NO_USAGE_STATS=1   registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0   --model RedHatAI/Llama-3.2-1B-Instruct-FP8   --trust-remote-code
-
+podman run --rm -it \
+  --device nvidia.com/gpu=all \
+  --security-opt=label=disable \
+  --shm-size=4GB \
+  -p 8000:8000 \
+  --env "HUGGING_FACE_HUB_TOKEN=$HF_TOKEN" \
+  --env "HF_HUB_OFFLINE=0" \
+  --env VLLM_NO_USAGE_STATS=1 \
+  registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0 \
+  --model  RedHatAI/Llama-3.2-1B-Instruct-FP8 \
+  --trust-remote-code
 ```
-
 4. Wait to see the messages:
 
 ```bash
