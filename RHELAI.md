@@ -61,7 +61,7 @@ Example output:
 ```bash
 curl -X POST http://localhost:8000/v1/chat/completions   -H "Content-Type: application/json"   -d '{
     "messages": [
-      {"role": "system", "content": "You are a helpul assistant."},
+      {"role": "system", "content": "You are a helpful assistant."},
       {"role": "user", "content": "What is LLM inference"}
     ],
     "max_tokens": 500,
