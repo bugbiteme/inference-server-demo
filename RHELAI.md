@@ -1,4 +1,4 @@
-# Running Inferece Server on RHEL AI
+# Running Inference Server on RHEL AI
 
 ## Reference Specs
 
@@ -18,13 +18,13 @@ TODO: Hugging Face Token
 podman login registry.redhat.io
 ```
 
-2. Use Podman to pull the NVIDIA based inference engine from `registry.redhat.io`
+2. Use Podman to pull the NVIDIA-based inference engine from `registry.redhat.io`
 
 ```bash
 podman pull registry.redhat.io/rhaiis/vllm-cuda-rhel9:3.0.0.0
 ```
 
-3. Use Podman to run the inference server with the above specified model
+3. Use Podman to run the inference server with the above-specified model
 
 ```bash
 podman run --rm -it \
@@ -48,7 +48,7 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 
-*Note*: You can experiment with other Red Hat validated models found on [huggingface.co/RedHatAI](https://huggingface.co/RedHatAI), but you may need a larger instance. `RedHatAI/Llama-3.2-1B-Instruct-FP8` is an LLM which will run on this instance without overconsuming GPU resources.
+*Note*: You can experiment with other Red Hat-validated models found on [huggingface.co/RedHatAI](https://huggingface.co/RedHatAI), but you may need a larger instance. `RedHatAI/Llama-3.2-1B-Instruct-FP8` is an LLM that will run on this instance without overconsuming GPU resources.
 
 4. While running you can open up another terminal to monitor GPU utilization by running the command `nvtop`
 
@@ -56,7 +56,7 @@ Example output:
 ![nvtop output](./img/image01.png)
 
 
-5. Open up a third terminal to test the running infernece server with`curl` 
+5. Open up a third terminal to test the running inference server with`curl` 
 
 ```bash
 curl -X POST http://localhost:8000/v1/chat/completions   -H "Content-Type: application/json"   -d '{
@@ -109,9 +109,9 @@ Example output:
 
 *Note*  
   
-  The larger the value for `max_tokens`, the more complete of a response you will get back.   
+  The larger the value for `max_tokens`, the more complete the response you will receive.   
    
-The larger the value of `temperature`, the more creative liberty, and less accuracy in the response.   
+The larger the value of `temperature`, the more creative liberty and less accuracy in the response.   
 
 set the temperature between `0.0` and `1.0`
   
