@@ -1,7 +1,7 @@
 # Running Inferece Server on OpenShift
 
 ## Reference Specs
-- OpenShift version: `4.15.51`
+- OpenShift version: ` 4.18.16`
 - Number of worker nodes: `2`
 - EC2 instance of worker nodes: `g6.4xlarge`
 - RH Validated Model: [RedHatAI/Llama-3.2-1B-Instruct-FP8](https://huggingface.co/RedHatAI/Llama-3.2-1B-Instruct-FP8)
@@ -149,5 +149,6 @@ curl -X POST vllm.rhaiis.svc.cluster.local:8000/v1/chat/completions   -H "Conten
   }' | jq
 ```
 
+### Try deploying another model
 
 [Back to main README](./README.md)
