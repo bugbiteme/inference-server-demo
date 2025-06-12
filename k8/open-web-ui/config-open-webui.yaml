@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open-webui-config
+data:
+  OPENAI_API_BASE: http://vllm.rhaiis.svc.cluster.local:8000
+  OPENAI_API_BASE_URL: http://vllm.rhaiis.svc.cluster.local:8000
+  OPENAI_API_KEY: dummy
+  WEBUI_SECRET_KEY: super-secret-key
+  WEBUI_AUTH: "false"
+  WEBUI_AUTH_PROVIDER: "disabled"
+
