@@ -158,13 +158,13 @@ oc apply -f k8/open-web-ui/ -n rhaiis
 Once deployed, get the Open WebUI route:
 
 ```bash
-oc get routes
+oc get routes open-webui  
 ```
 
 Example output:
 ```bash
 NAME         HOST/PORT
-open-webui   open-webui-ollama-granite-demo.apps.<your-domain>
+open-webui   open-webui-rhaiis.apps.<your-domain>
 ```
 
 
