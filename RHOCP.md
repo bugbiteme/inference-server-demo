@@ -149,6 +149,24 @@ curl -X POST vllm.rhaiis.svc.cluster.local:8000/v1/chat/completions   -H "Conten
   }' | jq
 ```
 
-### Try deploying another model
+### Deploy Open WebUI and connect to the running RH Inference Server
+
+```bash
+oc apply -f k8/open-web-ui/ -n rhaiis
+```
+
+Once deployed, get the Open WebUI route:
+
+```bash
+oc get routes
+```
+
+Example output:
+```bash
+NAME         HOST/PORT
+open-webui   open-webui-ollama-granite-demo.apps.<your-domain>
+```
+
+
 
 [Back to main README](./README.md)
