@@ -125,6 +125,23 @@ INFO:     10.0.2.100:52206 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 INFO 06-10 23:35:44 [loggers.py:87] Engine 000: Avg prompt throughput: 4.7 tokens/s, Avg generation throughput: 50.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 50.0%
 
 ```
+8. While running you can open up another terminal to monitor GPU utilization by running the command `nvtop` from the running pod.
+
+- `rsh` into the pod
+
+```bash
+oc rsh deployment/vllm
+```
+
+- run `nvtop` from inside the pod
+
+Example:
+
+```bash
+sh-5.1$ nvtop
+```
+Example output:
+![nvtop output](./img/image01.png)
 
 ## Optional
 
