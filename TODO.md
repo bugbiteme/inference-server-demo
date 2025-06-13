@@ -1,1 +1,2 @@
 - Use config map to load models into vLLM
+- Use OSSM + Rollouts to upgrade model server/LLM
