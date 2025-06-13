@@ -1,3 +1,5 @@
 - Use config map to load models into vLLM
 - Use OSSM + Rollouts to upgrade model server/LLM
 - Explore LLM Gateway and RHCL use cases
+- GitOps deployment
+- Instructions for secret creation via CLI
